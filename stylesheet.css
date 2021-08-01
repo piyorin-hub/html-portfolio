@@ -2,7 +2,8 @@
 
 html {
     font-size: 100%;
-}   
+} 
+
 body {
     background-color: #f0f0f0;
     color: #000;
@@ -10,13 +11,26 @@ body {
     font-family: "Helvetica Neue";
     font-weight: bold;
     font-style: italic;
+    margin: 0;
+    padding: 0;
 }
+header {
+    top: 0;
+    position: fixed;
+    width: 100%;
+    background: #000000;
+    z-index: 50;
+}
+
 a {
-    color: #000;
+    color: #ffffff;
     font-size: 0.875rem;
     text-decoration: none;
 }
 
+.site-title a {
+    font-size: 3rem;
+}
 img {
     max-width: 100%;
     vertical-align: bottom;
@@ -24,9 +38,6 @@ img {
 li {
     margin-top: 25px;
     list-style: none;
-}
-.maintitle a {
-    font-size: 50px;
 }
 
 .section-title {
@@ -72,61 +83,88 @@ li {
 /*-------------------------------------------
 ヘッダー
 -------------------------------------------*/
+
 #header {
-    height: 80px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-family: "Helvetica Neue";
-    font-weight: bold;
-    font-style: italic;
+  max-width: 1920px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 90px;
+  margin: 0 auto;
+  padding: 0 4%;
 }
-#header .inner {
-    display: flex;
-    align-items: center;
+
+#header ul {
+  display: flex;
+  padding: 10px 0;
 }
-#header .inner ul {
-    display: flex;
-    align-items: center;
+#header li {
+  font-size: 0.9rem;
+  margin-left: 30px;
 }
-#header .main-nav {
-    margin-left: auto;
-    margin-bottom: auto;
+#header li a {
+  color: #ffffff;
 }
-#header .inner li {
-    margin-right: 30px;
+#header li a:hover {
+  opacity: 0.7;
 }
-#header .inner li:last-child {
-    margin-right: 0;
+#header li img.icon {
+  width: 20px;
 }
-#header .contact {
-    width: 200px;
-    height: 80px;
-    line-height: 80px;
-    background-color: #000;
-    color: #fff;
-    font-size: 0.75rem;
-    display: inline-block;
-    text-align: center;
-}
-#header .contact:hover {
-    background-color: #333;
-}
+
 
 /*-------------------------------------------
 Mainvisual
 -------------------------------------------*/
-#mainvisual {
+#slideshow {
     margin-bottom: 120px;
-}
+    margin-top: 80px;
+} 
 /*
 メインビジュアルを画面の高さに合わせる
 headerの高さが80pxあるので、100vhから80px分だけマイナスする
 */
-#mainvisual img {
+#slideshow img {
+    margin-top: 80px;
     width: 100%;
     height: calc(100vh - 80px);
     object-fit: cover;
+    position: absolute;   
+    top: 0;
+    left:0;
+    z-index: 8;
+    opacity: 0.0;
+}
+#slideshow img.active {
+    z-index: 10;
+    opacity: 1.0;
+}
+#slideshow img.last-active {
+    z-index: 9;
+}
+/*-------------------------------------------
+About
+-------------------------------------------*/
+#about {
+    display: flex;
+    margin-bottom: 120px;
+    margin-top: 50rem;
+    position: -webkit-sticky;
+}
+#about .img {
+    width: 55%;
+}
+#about .img img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+#about .text {
+    width: 45%;
+    padding: 180px 5% 0 5%;
+}
+#about .text p {
+    line-height: 2.2;
 }
 
 /*-------------------------------------------
@@ -167,36 +205,18 @@ News
     font-size: 0.75rem;
     margin-left: 10px;
     text-align: center;
-}
+} 
 
-/*-------------------------------------------
-About
--------------------------------------------*/
-#about {
-    display: flex;
-    margin-bottom: 120px;
-}
-#about .img {
-    width: 55%;
-}
-#about .img img {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-}
-#about .text {
-    width: 45%;
-    padding: 180px 5% 0 5%;
-}
-#about .text p {
-line-height: 2.2;
-}
 
 /*-------------------------------------------
 works
 -------------------------------------------*/
 #works {
     margin-bottom: 120px;
+}
+.title {
+    color: black;
+    font-size: 22px;
 }
 #works .flex {
     display: flex;
@@ -234,6 +254,23 @@ works
     left: -18px;
 }
 /*-------------------------------------------
+footer
+-------------------------------------------*/
+
+#footer {
+    background-color: #24292e;
+    color: #fff;
+    height: 1.4rem;
+    font-size: 0.5rem;
+    padding: 2px 5px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.copyright p{
+    margin-bottom: 10px;
+}
+/*-------------------------------------------
 Contact(contact.html)
 -------------------------------------------*/
 #contact_list {
@@ -262,13 +299,21 @@ SP
 /*-------------------------------------------
 ヘッダー
 -------------------------------------------*/
-#header .inner {
+
+#header {
+    max-width: 100%;
+    height: auto;
     flex-direction: column;
-    align-items: flex-start;
+  }
+#header li {
+    font-size: 0.8rem;
+    margin-left: 20px;
 }
-#header .contact {
-    display: none;
+#header li:first-child {
+    margin-left: 0;
 }
+
+
 
 /*-------------------------------------------
 Mainvisual
@@ -365,7 +410,6 @@ margin-bottom: 10px;
 }
 .copyright p{
     text-align: center;
-    
 }
 /*-------------------------------------------
   Contact
