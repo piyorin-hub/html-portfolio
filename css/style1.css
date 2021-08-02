@@ -5,19 +5,21 @@ html {
 }
 body {
     background-color: #f0f0f0;
-    color: #000;
     font-size: 0.875rem;
     font-family: "Helvetica Neue";
     font-weight: bold;
     font-style: italic;
+    margin: 0;
+    padding: 0;
 }
 img {
     max-width: 100%;
+    vertical-align: bottom;
 }
 a {
-    color: black;
+    color: #ffffff;
     text-decoration: none;
-    margin-left: 30px;
+    /* margin-left: 30px; */
 }
 ul {
     list-style: none;
@@ -38,33 +40,59 @@ ul {
     margin-bottom: 30px;
     text-align: center;
 }
+.wrapper {
+    width: 100%;
+    max-width: 1032px;
+    padding: 0 16px;
+    margin: 0 auto;
+}
 
 /*-------------------------------------------
 ヘッダー
 -------------------------------------------*/
-#header {
-    height: 80px;
+header {
+    top: 0;
+    margin: 0 auto;
+    padding: 0 0;
+    position: fixed;
+    width: 100%;
+    height: 90px;
+    background: #000000;
+    z-index: 50;
+    max-width: 1920px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-family: "Helvetica Neue";
-    font-weight: bold;
-    font-style: italic;
 }
-#header .inner {
-    display: flex;
-    align-items: center;
+.site-title a {
+    font-size: 4vw;
+    color: #ffffff;
 }
+/* #header {
+  
+} */
 
-#header .contact:hover {
-    background-color: #333;
+/* #header ul {
+  display: flex;
+  padding: 10px 0;
 }
+#header li {
+  font-size: 0.9rem;
+  margin-left: 30px;
+}
+#header li a {
+  color: #ffffff;
+}
+#header li a:hover {
+  opacity: 0.7;
+} */
 
 /*-------------------------------------------
 Mainvisual
 -------------------------------------------*/
 #mainvisual {
-  margin-bottom: 60px;
+  /* margin-bottom: 60px; */
+  margin: 100px 120px 60px;
 }
 
 /*-------------------------------------------
@@ -175,7 +203,17 @@ SP
   ヘッダー
   -------------------------------------------*/
   #header {
-      padding: 0 10px;
+      padding: 0;
+      margin-top: 0;
+      margin-bottom: 0.3em;
+      justify-content: space-between;
+      flex-direction: column;
+  }
+  #header .site-title {
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 3vw;
   }
 
   /*-------------------------------------------
