@@ -6,7 +6,6 @@ html {
 
 body {
     background-color: #f0f0f0;
-
     font-size: 0.875rem;
     font-family: "Helvetica Neue";
     font-weight: bold;
@@ -14,14 +13,6 @@ body {
     margin: 0;
     padding: 0;
 }
-header {
-    top: 0;
-    position: fixed;
-    width: 100%;
-    background: #000000;
-    z-index: 50;
-}
-
 a {
     color: #ffffff;
     font-size: 0.875rem;
@@ -31,7 +22,7 @@ a {
 .site-title a {
     font-size: 4vw;
     color: #ffffff;
-    margin-top: 0.1em;
+    /* margin: 0.1em auto; */
 }
 img {
     max-width: 100%;
@@ -87,7 +78,16 @@ li {
 /*-------------------------------------------
 ヘッダー
 -------------------------------------------*/
-
+#header .site-title .contact-title {
+    text-align: center;
+}
+header {
+    top: 0;
+    position: fixed;
+    width: 100%;
+    background: #000000;
+    z-index: 50;
+}
 #header {
     max-width: 1920px;
     display: flex;
@@ -262,29 +262,34 @@ footer
 -------------------------------------------*/
 
 #footer {
+    bottom: 0;
     background-color: #24292e;
     color: #fff;
     height: 1.4rem;
-    font-size: 0.5rem;
     padding: 2px 5px;
-    margin-top: auto;
-    margin-bottom: 0;
     text-align: center;
     justify-content: center;
     align-items: center;
 }
 .copyright p{
-    margin-bottom: 10px;
+    margin: auto;
+    font-size: 0.5rem;
 }
 /*-------------------------------------------
 Contact(contact.html)
 -------------------------------------------*/
-#contact_list {
-    marigin-top: 90px;
+#header .contact-title a{
     text-align: center;
 }
-#d-grid .btn{
+#contact_list {
+    text-align: center;
+    margin-top: 90px;
+}
+#contact .d-grid .btn{
     color:black;
+}
+#contact {
+    margin-bottom: 20px;
 }
 
 
