@@ -2,31 +2,44 @@
 
 html {
     font-size: 100%;
-}   
+} 
+
 body {
     background-color: #f0f0f0;
-    color: #000;
+
     font-size: 0.875rem;
     font-family: "Helvetica Neue";
     font-weight: bold;
     font-style: italic;
+    margin: 0;
+    padding: 0;
 }
+header {
+    top: 0;
+    position: fixed;
+    width: 100%;
+    background: #000000;
+    z-index: 50;
+}
+
 a {
-    color: #000;
+    color: #ffffff;
     font-size: 0.875rem;
     text-decoration: none;
 }
 
+.site-title a {
+    font-size: 4vw;
+    color: #ffffff;
+    margin-top: 0.1em;
+}
 img {
     max-width: 100%;
     vertical-align: bottom;
 }
 li {
-    margin-top: 25px;
+    margin-top: 10px;
     list-style: none;
-}
-.maintitle a {
-    font-size: 50px;
 }
 
 .section-title {
@@ -51,6 +64,8 @@ li {
 .section-title .en {
     display: block;
     font-size: 2.25rem;
+    font-style: italic;
+    font-weight: bold;
     letter-spacing: 0.3em;
     margin-bottom: 10px;
 }
@@ -72,63 +87,135 @@ li {
 /*-------------------------------------------
 ヘッダー
 -------------------------------------------*/
+
 #header {
-    height: 80px;
+    max-width: 1920px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-family: "Helvetica Neue";
-    font-weight: bold;
-    font-style: italic;
-}
-#header .inner {
-    display: flex;
-    align-items: center;
-}
-#header .inner ul {
-    display: flex;
-    align-items: center;
-}
-#header .main-nav {
-    margin-left: auto;
-    margin-bottom: auto;
-}
-#header .inner li {
-    margin-right: 30px;
-}
-#header .inner li:last-child {
-    margin-right: 0;
-}
-#header .contact {
-    width: 200px;
-    height: 80px;
-    line-height: 80px;
-    background-color: #000;
-    color: #fff;
-    font-size: 0.75rem;
-    display: inline-block;
-    text-align: center;
-}
-#header .contact:hover {
-    background-color: #333;
+    height: 90px;
+    margin: 0 auto;
+    padding: 0 4%;
 }
 
-/*-------------------------------------------
-Mainvisual
--------------------------------------------*/
-#mainvisual {
-    margin-bottom: 120px;
+#header ul {
+    display: flex;
+    padding:  0;
+    margin-bottom: 0;
 }
+#header li {
+    margin-top: 0.1rem;
+    margin-left: 30px;
+}
+#header li a {
+    color: #ffffff;
+    font-size: 2vw;
+}
+#header li a:hover {
+    opacity: 0.7;
+}
+
+
+
+/*-------------------------------------------
+slideahow
+-------------------------------------------*/
+/* #slideshow {
+    margin-bottom: 120px;
+    margin-top: 80px; 
+}  */
 /*
 メインビジュアルを画面の高さに合わせる
 headerの高さが80pxあるので、100vhから80px分だけマイナスする
 */
-#mainvisual img {
+#slideshow img {
+    margin-top: auto;
     width: 100%;
     height: calc(100vh - 80px);
     object-fit: cover;
+    position: absolute;   
+    top: 0;
+    left:0;
+    z-index: 8;
+    opacity: 0.0;
+}
+#slideshow img.active {
+    z-index: 10;
+    opacity: 1.0;
+}
+#slideshow img.last-active {
+    z-index: 9;
+}
+/*-------------------------------------------
+About
+-------------------------------------------*/
+#about {
+    display: flex;
+    margin-bottom: 120px;
+    margin-top: 50rem;
+    position: -webkit-sticky;
+}
+#about .img {
+    width: 55%;
+}
+#about .img img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+#about .text {
+    width: 45%;
+    padding: 180px 5% 0 5%;
+}
+#about .text p {
+    line-height: 2.2;
 }
 
+/*-------------------------------------------
+works
+-------------------------------------------*/
+#works {
+    margin-bottom: 120px;
+}
+.title {
+    color: black;
+    font-size: 22px;
+}
+#works .flex {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10%;
+}
+#works .flex .left {
+    width: 50%;
+    /* margin-top: 100px; */
+}
+#works .flex .right {
+    width: 50%;
+}
+#works .flex .item {
+    margin-bottom: 50px;
+    margin-left: 10px;
+}
+#works .flex .item:last-child {
+    margin-bottom: 0;
+}
+#works .flex .title {
+    margin: 0 0 10px 18px;
+    position: relative;
+}
+/*
+疑似要素でタイトルの横線を引く
+*/
+#work .flex .title::before {
+    content: "";
+    width: 8px;
+    height: 1px;
+    background-color: #000;
+    position: absolute;
+    top: 50%;
+    left: -18px;
+}
 /*-------------------------------------------
 News
 -------------------------------------------*/
@@ -167,71 +254,25 @@ News
     font-size: 0.75rem;
     margin-left: 10px;
     text-align: center;
-}
+} 
+
 
 /*-------------------------------------------
-About
+footer
 -------------------------------------------*/
-#about {
-    display: flex;
-    margin-bottom: 120px;
-}
-#about .img {
-    width: 55%;
-}
-#about .img img {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-}
-#about .text {
-    width: 45%;
-    padding: 180px 5% 0 5%;
-}
-#about .text p {
-line-height: 2.2;
-}
 
-/*-------------------------------------------
-works
--------------------------------------------*/
-#works {
-    margin-bottom: 120px;
+#footer {
+    background-color: #24292e;
+    color: #fff;
+    height: 1.4rem;
+    font-size: 0.5rem;
+    padding: 2px 5px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
 }
-#works .flex {
-    display: flex;
-    justify-content: space-between;
-    padding: 0 10%;
-}
-#works .flex .left {
-    width: 50%;
-    /* margin-top: 100px; */
-}
-#works .flex .right {
-    width: 50%;
-}
-#works .flex .item {
-    margin-bottom: 50px;
-    margin-left: 10px;
-}
-#works .flex .item:last-child {
-    margin-bottom: 0;
-}
-#works .flex .title {
-    margin: 0 0 10px 18px;
-    position: relative;
-}
-/*
-疑似要素でタイトルの横線を引く
-*/
-#work .flex .title::before {
-    content: "";
-    width: 8px;
-    height: 1px;
-    background-color: #000;
-    position: absolute;
-    top: 50%;
-    left: -18px;
+.copyright p{
+    margin-bottom: 10px;
 }
 /*-------------------------------------------
 Contact(contact.html)
@@ -239,7 +280,7 @@ Contact(contact.html)
 #contact_list {
     text-align: center;
 }
-#d-grid {
+#d-grid .btn{
     color:black;
 }
 
@@ -262,20 +303,38 @@ SP
 /*-------------------------------------------
 ヘッダー
 -------------------------------------------*/
-#header .inner {
+
+#header {
+    max-width: 100%;
+    height: auto;
     flex-direction: column;
-    align-items: flex-start;
 }
-#header .contact {
-    display: none;
+#header .site-title {
+    line-height: 0.2rem;
+    text-align: center;
+    font-size: 6vmax;
+    margin-top: 0.4rem;
+}
+#header li {
+    font-size: 4vh;
+    margin-left: 20px;
+    margin-bottom: auto;
+    line-height: 4.5vw;
+}
+#header li:first-child {
+    margin-left: 0;
 }
 
+
+
 /*-------------------------------------------
-Mainvisual
+#slideshow
 -------------------------------------------*/
-#mainvisual {
+#slideshow {
     margin-bottom: 80px;
+    margin-top: auto;
 }
+
 
 /*-------------------------------------------
 News
@@ -342,13 +401,6 @@ works
 /*-------------------------------------------
 footer
 -------------------------------------------*/
-/* #footer .flex {
-flex-direction: column;
-align-items: flex-start;
-}
-#footer .flex .wrapper {
-margin-bottom: 10px;
-} */
 #footer {
     background-color: #24292e;
     color: #fff;
@@ -358,6 +410,7 @@ margin-bottom: 10px;
     margin: 0 auto;
     width: 100%;
     height: 100%;
+    bottom: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -365,7 +418,6 @@ margin-bottom: 10px;
 }
 .copyright p{
     text-align: center;
-    
 }
 /*-------------------------------------------
   Contact
