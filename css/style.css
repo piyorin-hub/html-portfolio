@@ -267,6 +267,7 @@ footer
     height: 1.4rem;
     font-size: 0.5rem;
     padding: 2px 5px;
+    margin-top: auto;
     margin-bottom: 0;
     text-align: center;
     justify-content: center;
@@ -279,6 +280,7 @@ footer
 Contact(contact.html)
 -------------------------------------------*/
 #contact_list {
+    marigin-top: 90px;
     text-align: center;
 }
 #d-grid .btn{
