@@ -65,28 +65,10 @@ header {
     align-items: center;
 }
 .site-title a {
-    margin-left: 35px;
+    margin-left: 30px;
     font-size: 4vw;
     color: #ffffff;
 }
-/* #header {
-  
-} */
-
-/* #header ul {
-  display: flex;
-  padding: 10px 0;
-}
-#header li {
-  font-size: 0.9rem;
-  margin-left: 30px;
-}
-#header li a {
-  color: #ffffff;
-}
-#header li a:hover {
-  opacity: 0.7;
-} */
 
 /*-------------------------------------------
 Mainvisual
@@ -189,6 +171,13 @@ Detail
 }
 #detail .text .link:hover {
     opacity: 0.8;
+}
+/*------------------------------------------
+footer
+-------------------------------------------*/
+.copyright {
+    text-align: center;
+    margin-bottom: 10px;
 }
 
 
